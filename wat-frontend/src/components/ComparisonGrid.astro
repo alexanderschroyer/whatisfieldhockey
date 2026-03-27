@@ -1,0 +1,75 @@
+---
+import type { ComparisonRow } from '../types/comparison';
+
+interface Props {
+	leftTitle: string;
+	rightTitle: string;
+	rows: ComparisonRow[];
+}
+
+const { leftTitle, rightTitle, rows } = Astro.props;
+---
+
+<div style="overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--color-border);">
+	<table class="comparison-table">
+		<thead>
+			<tr>
+				<th scope="col" class="comparison-table__corner"></th>
+				<th scope="col">{leftTitle}</th>
+				<th scope="col">{rightTitle}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{
+				rows.map((r) => (
+					<tr>
+						<th scope="row">{r.label}</th>
+						<td>{r.left}</td>
+						<td>{r.right}</td>
+					</tr>
+				))
+			}
+		</tbody>
+	</table>
+</div>
+
+<style>
+	.comparison-table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.95rem;
+		background: var(--color-surface);
+	}
+
+	.comparison-table th,
+	.comparison-table td {
+		padding: var(--space-sm) var(--space-md);
+		text-align: left;
+		vertical-align: top;
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.comparison-table thead th {
+		background: rgba(21, 41, 36, 0.8);
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--color-accent);
+	}
+
+	.comparison-table tbody th {
+		color: var(--color-muted);
+		font-weight: 600;
+		min-width: 7rem;
+	}
+
+	.comparison-table tbody tr:last-child th,
+	.comparison-table tbody tr:last-child td {
+		border-bottom: none;
+	}
+
+	.comparison-table__corner {
+		width: 0;
+		min-width: 5rem;
+	}
+</style>

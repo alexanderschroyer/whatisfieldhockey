@@ -1,0 +1,37 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CitationNote from '../components/CitationNote.astro';
+import ComparisonGrid from '../components/ComparisonGrid.astro';
+import { worldVsUsa, mensVsWomens } from '../data/sportComparisons';
+
+const entry = await getEntry('articles', 'sport-today');
+if (!entry) throw new Error('Missing content: articles/sport-today');
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+	<PageHeader title={entry.data.title} description={entry.data.description} />
+	<CitationNote
+		lastReviewed={entry.data.lastReviewed ?? '2026-03-27'}
+		links={[
+			{ href: 'https://www.fih.hockey/', label: 'FIH' },
+			{ href: 'https://www.usafieldhockey.com/', label: 'USA Field Hockey' },
+			{ href: 'https://www.ncaa.com/', label: 'NCAA' },
+		]}
+	/>
+	<article class="prose">
+		<Content />
+	</article>
+
+	<section class="comparison-section" aria-labelledby="world-usa-heading">
+		<h2 id="world-usa-heading">World vs United States</h2>
+		<ComparisonGrid leftTitle="Internationally" rightTitle="United States" rows={worldVsUsa} />
+	</section>
+
+	<section class="comparison-section" aria-labelledby="mens-womens-heading">
+		<h2 id="mens-womens-heading">Men’s vs women’s (US lens)</h2>
+		<ComparisonGrid leftTitle="Men’s pathways" rightTitle="Women’s pathways" rows={mensVsWomens} />
+	</section>
+</BaseLayout>

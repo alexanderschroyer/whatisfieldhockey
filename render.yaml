@@ -1,0 +1,13 @@
+# https://render.com/docs/blueprint-spec
+# Dashboard: New → Blueprint → connect this repo.
+# After deploy, open Environment and set CORS_ORIGIN to your live site origin(s),
+# comma-separated, e.g. https://your-site.netlify.app,https://www.example.com
+services:
+  - type: web
+    name: wat-backend
+    runtime: docker
+    region: oregon
+    plan: free
+    rootDir: wat_backend
+    dockerfilePath: ./Dockerfile
+    dockerContext: .

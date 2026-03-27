@@ -1,0 +1,48 @@
+---
+interface Props {
+	lastReviewed: string;
+	links?: { href: string; label: string }[];
+	/** Explainers and articles — not governing-body rule text */
+	secondaryLinks?: { href: string; label: string }[];
+}
+
+const { lastReviewed, links = [], secondaryLinks = [] } = Astro.props;
+---
+
+<aside class="citation-note" aria-label="Sources and review date">
+	<p>
+		<strong>Last reviewed:</strong>{' '}
+		<time datetime={lastReviewed}>{lastReviewed}</time>. Summaries are for orientation only — use the official
+		links below for authoritative text.
+	</p>
+	{
+		links.length > 0 && (
+			<p>
+				<strong>Official resources:</strong>{' '}
+				{links.map((l, i) => (
+					<>
+						{i > 0 && ' · '}
+						<a href={l.href} target="_blank" rel="noopener noreferrer">
+							{l.label}
+						</a>
+					</>
+				))}
+			</p>
+		)
+	}
+	{
+		secondaryLinks.length > 0 && (
+			<p>
+				<strong>Orientation (not official text):</strong>{' '}
+				{secondaryLinks.map((l, i) => (
+					<>
+						{i > 0 && ' · '}
+						<a href={l.href} target="_blank" rel="noopener noreferrer">
+							{l.label}
+						</a>
+					</>
+				))}
+			</p>
+		)
+	}
+</aside>
