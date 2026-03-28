@@ -1,0 +1,8 @@
+# Monorepo: frontend lives in wat-frontend/. Netlify reads this file from the repo root.
+[build]
+  base = "wat-frontend"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
