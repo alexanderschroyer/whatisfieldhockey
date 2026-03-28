@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Page not found';
+---
+
+<BaseLayout title={title} description="That path is not on this site.">
+	<section class="prose">
+		<h1>{title}</h1>
+		<p>The link may be broken or the page may have moved.</p>
+		<p><a href="/">Back to home</a></p>
+	</section>
+</BaseLayout>

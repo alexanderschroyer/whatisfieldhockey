@@ -1,0 +1,6 @@
+# Extensionless URLs → directory indexes (Netlify + Astro `trailingSlash: 'always'`)
+/rules		/rules/		301
+/history	/history/	301
+/sport-today	/sport-today/	301
+/scholarships	/scholarships/	301
+/olympic-pathway	/olympic-pathway/	301

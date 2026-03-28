@@ -1,5 +1,8 @@
 [build]
   command = "npm run build"
+  # Must be the Astro output folder. If this site lives in a subfolder of the Git repo, set
+  # Site configuration → Build settings → Base directory to that folder (e.g. wat-frontend)
+  # so `publish = "dist"` still points at this project’s dist/.
   publish = "dist"
 
 [build.environment]
