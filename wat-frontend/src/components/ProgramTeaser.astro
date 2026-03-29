@@ -1,0 +1,62 @@
+---
+import { contactEmail } from '../config/site';
+import { upcomingEvents } from '../data/upcomingEvents';
+
+const mailto = `mailto:${contactEmail}`;
+const hasUpcoming = upcomingEvents.length > 0;
+---
+
+<section class="program-teaser" aria-labelledby="program-teaser-heading">
+	<h2 id="program-teaser-heading" class="section-heading">How families get started</h2>
+	<div class="program-teaser__grid">
+		<div class="program-teaser__card program-teaser__card--start">
+			<h3>Start with a try-it</h3>
+			<p>
+				Free and low-barrier sessions: quick welcome and safety chat, stick skills in small groups, then a short
+				scrimmage or relay so kids leave having touched the ball and met teammates. No experience needed — we bring
+				sticks.
+			</p>
+			{
+				hasUpcoming && (
+					<div class="program-teaser__upcoming">
+						<p class="program-teaser__upcoming-label">Up next</p>
+						<ul class="program-teaser__upcoming-list">
+							{upcomingEvents.map(({ title, dateLabel, location, href }) => (
+								<li>
+									{href ? (
+										<a href={href}>{title}</a>
+									) : (
+										<span class="program-teaser__upcoming-title">{title}</span>
+									)}
+									<span class="program-teaser__upcoming-meta">
+										{' '}
+										— {dateLabel}
+										{location ? ` · ${location}` : ''}
+									</span>
+								</li>
+							))}
+						</ul>
+					</div>
+				)
+			}
+			<p class="program-teaser__card-cta">
+				<a href="/events/">Try-it &amp; events</a>
+			</p>
+		</div>
+		<div class="program-teaser__card">
+			<h3>Season &amp; practices</h3>
+			<p>
+				Practice days and field locations are being lined up for the next cycle. When the calendar is set, everything
+				lives on <a href="/programs/">Programs</a> — age bands and expectations too.
+			</p>
+		</div>
+		<div class="program-teaser__card">
+			<h3>Fees &amp; register</h3>
+			<p>
+				We aim to keep costs clear and fair; the fee sheet and payment options will post with registration. Online
+				signup is <strong>coming soon</strong> — email <a href={mailto}>{contactEmail}</a> to get on the list, ask
+				questions, or hold interest for a team. For anything else, <a href="/contact/">contact</a> works too.
+			</p>
+		</div>
+	</div>
+</section>

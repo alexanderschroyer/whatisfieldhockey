@@ -1,0 +1,46 @@
+---
+const photos = [
+	{
+		src: '/images/gallery/youth-team.png',
+		alt: 'Youth girls’ indoor field hockey team smiling together, sticks gathered in a team pose on a blue court.',
+	},
+	{
+		src: '/images/gallery/men-olympic-action.png',
+		alt: 'Men’s field hockey match on blue turf: attacker dribbling as defenders close in.',
+	},
+	{
+		src: '/images/gallery/collegiate-goal-save.png',
+		alt: 'Collegiate women’s field hockey: forward drives toward goal as the goalkeeper stretches for a save on green turf.',
+	},
+	{
+		src: '/images/gallery/penalty-corner-defense.png',
+		alt: 'Women’s outdoor field hockey: defenders in masks and goalkeeper set during a penalty corner.',
+	},
+	{
+		src: '/images/gallery/team-sticks-circle.png',
+		alt: 'Teammates stand in a circle on green turf with colorful field hockey sticks pointed toward the center.',
+	},
+	{
+		src: '/images/gallery/london-olympics-goal.png',
+		alt: 'Women’s Olympic field hockey goalmouth action on blue turf with pink perimeter boards.',
+	},
+] as const;
+---
+
+<section class="photo-gallery" aria-labelledby="photo-gallery-heading">
+	<h2 id="photo-gallery-heading" class="section-heading">More from the pitch</h2>
+	<p class="photo-gallery__lead">
+		From try-its to big-game energy — a quick look at why families fall for field hockey.
+	</p>
+	<ul class="photo-gallery__grid">
+		{
+			photos.map(({ src, alt }) => (
+				<li class="photo-gallery__item">
+					<figure class="photo-gallery__figure">
+						<img class="photo-gallery__img" src={src} alt={alt} width="640" height="400" loading="lazy" />
+					</figure>
+				</li>
+			))
+		}
+	</ul>
+</section>

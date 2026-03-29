@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { contactEmail } from '../config/site';
+
+const mailto = `mailto:${contactEmail}`;
+const title = 'Programs';
+const description = 'Age groups, practice schedule, fees, equipment, and how to register for youth field hockey in Alabama.';
+---
+
+<BaseLayout {title} {description}>
+	<PageHeader {title} {description} />
+	<div class="prose">
+		<p>
+			<strong>Start with a try-it</strong> if you want to see the sport before committing —{' '}
+			<a href="/events/">free clinics and pop-ups</a> are the lowest-pressure first step. When you’re ready for a
+			season, this page will hold practice schedule, fees, and registration. We’re building a program that is{' '}
+			<strong>fun</strong>, <strong>community-driven</strong>, and <strong>straightforward for families</strong>.
+		</p>
+
+		<h2>Who it’s for</h2>
+		<p>
+			Youth beginners through early teens (exact age bands will be posted with the next registration cycle). No
+			prior experience required — we teach grip, passing, and small-sided play from the ground up.
+		</p>
+
+		<h2>Schedule</h2>
+		<p>
+			Practice days and field locations will appear here once confirmed. Want a heads-up when the calendar drops?
+			Email <a href={mailto}>{contactEmail}</a>.
+		</p>
+
+		<h2>Fees</h2>
+		<p>
+			Fee schedule, sibling discounts, and equipment rental (if offered) will be listed alongside registration. Our
+			aim is to stay cost-conscious while covering field time, balls, sticks for newcomers, and coach support.
+		</p>
+
+		<h2>What to bring</h2>
+		<ul>
+			<li>Mouth guard and shinguards (often required once games start).</li>
+			<li>Water bottle and turf-appropriate shoes if you have them.</li>
+			<li>We provide sticks for try-its and often for first seasons — details with signup.</li>
+		</ul>
+
+		<h2>Register</h2>
+		<p>
+			Online registration link: <strong>coming soon</strong>. Until it is live, email{' '}
+			<a href={mailto}>{contactEmail}</a> to ask about the next season or to hold interest for a team.
+		</p>
+	</div>
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { contactEmail } from '../config/site';
+
+const mailto = `mailto:${contactEmail}`;
+const title = 'About';
+const description = 'Why Alabama needs field hockey, our story, how to volunteer, and where the sport is growing in the state.';
+---
+
+<BaseLayout {title} {description}>
+	<PageHeader {title} {description} />
+	<div class="prose">
+		<h2>Why Alabama needs field hockey</h2>
+		<p>
+			Field hockey is fast, social, and open to new players well into the teen years. In many states it is a staple
+			for girls’ and coed youth programs; here it is still an underserved opportunity. Growing the game means more
+			kids finding a team, more schools able to offer something different, and stronger ties to pathways beyond local play
+			(USA Field Hockey, college clubs, and beyond).
+		</p>
+
+		<h2>Our story</h2>
+		<p>
+			This site and the programs behind it started as a grassroots push: people who love the sport volunteering time
+			to introduce sticks, rules, and scrimmages without needing a big paid staff on day one. Many successful clubs
+			lean on experienced players and parents as coaches first, then expand as enrollment grows. Your organizers can
+			tell the full story — reach out at <a href={mailto}>{contactEmail}</a>.
+		</p>
+
+		<h2>Where field hockey lives in Alabama</h2>
+		<p>
+			Programs cluster where champions step up: metro areas, schools with adventurous ADs, and clubs that partner
+			with YMCAs or rec departments. USA Field Hockey publishes regional and club resources — use their site for
+			official listings as they change season to season.
+		</p>
+		<ul>
+			<li><strong>Greater Birmingham</strong> — youth and school outreach (update with your exact locations).</li>
+			<li><strong>Huntsville / North Alabama</strong> — room to grow; clinics help seed teams.</li>
+			<li><strong>Mobile / Gulf Coast</strong> — connect through schools and multi-sport clubs.</li>
+			<li><strong>College clubs</strong> — many players first touch the sport on campus; link up for demos and mentors.</li>
+		</ul>
+		<p>
+			Missing your town? That is exactly why we run try-its and partner events — <a href="/contact/">say hello</a>.
+		</p>
+
+		<h2>Get involved</h2>
+		<ul>
+			<li><strong>Parents</strong> — bring your kid to a <a href="/events/">try-it</a>; carpool and snack duty count.</li>
+			<li><strong>Coaches &amp; players</strong> — volunteer at a clinic or mentor a new team; no pro license required to start.</li>
+			<li><strong>Schools &amp; orgs</strong> — host a pop-up; we bring sticks and simple stations.</li>
+		</ul>
+
+		<h2>What’s next</h2>
+		<p>
+			Published season schedules, transparent fees, and online registration are on the roadmap. Until each piece is
+			live, email keeps everyone in the loop. Watch <a href="/programs/">Programs</a> and <a href="/events/">Events</a>
+			for dates.
+		</p>
+	</div>
+</BaseLayout>

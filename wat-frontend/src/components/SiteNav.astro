@@ -1,9 +1,20 @@
 ---
 const path = Astro.url.pathname;
-const link = (href: string, label: string) => ({ href, label, current: path === href || (href !== '/' && path.startsWith(href)) });
+const link = (href: string, label: string) => ({
+	href,
+	label,
+	current: path === href || (href !== '/' && path.startsWith(href)),
+});
 
-const items = [
+const mainLinks = [
 	link('/', 'Home'),
+	link('/programs/', 'Programs'),
+	link('/events/', 'Events'),
+	link('/about/', 'About'),
+	link('/contact/', 'Contact'),
+];
+
+const learnLinks = [
 	link('/rules/', 'Rules'),
 	link('/history/', 'History'),
 	link('/sport-today/', 'Sport today'),
@@ -14,11 +25,27 @@ const items = [
 ---
 
 <nav class="site-nav" aria-label="Primary">
-	{
-		items.map(({ href, label, current }) => (
-			<a href={href} aria-current={current ? 'page' : undefined}>
-				{label}
-			</a>
-		))
-	}
+	<input type="checkbox" id="site-nav-toggle" class="site-nav__checkbox" />
+	<div class="site-nav__bar">
+		<label for="site-nav-toggle" class="site-nav__toggle">
+			<span class="site-nav__toggle-text">Menu</span>
+		</label>
+	</div>
+	<div class="site-nav__panel">
+		{
+			mainLinks.map(({ href, label, current }) => (
+				<a href={href} aria-current={current ? 'page' : undefined}>
+					{label}
+				</a>
+			))
+		}
+		<span class="site-nav__divider">Learn</span>
+		{
+			learnLinks.map(({ href, label, current }) => (
+				<a href={href} aria-current={current ? 'page' : undefined}>
+					{label}
+				</a>
+			))
+		}
+	</div>
 </nav>

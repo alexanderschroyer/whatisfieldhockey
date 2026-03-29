@@ -1,0 +1,21 @@
+---
+interface Props {
+	imageSrc: string;
+	imageAlt: string;
+}
+
+const { imageSrc, imageAlt } = Astro.props;
+---
+
+<div class="hero-media">
+	<img
+		class="hero-media__img"
+		src={imageSrc}
+		alt={imageAlt}
+		width="1200"
+		height="630"
+		decoding="async"
+		fetchpriority="high"
+	/>
+	<div class="hero-media__overlay" aria-hidden="true"></div>
+</div>

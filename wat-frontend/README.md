@@ -1,4 +1,14 @@
-# Astro Starter Kit: Minimal
+# WAT field hockey frontend
+
+Astro site for youth- and parent-forward field hockey in Alabama.
+
+## Content checklist (photos & config)
+
+Before launch, replace placeholders with real club assets:
+
+- **`public/images/hero.svg`** — Swap for a wide team or clinic photo (e.g. `hero.jpg`). Update [`src/pages/index.astro`](src/pages/index.astro) to point `HeroMedia` at the new file and write accurate `alt` text.
+- **Clinic / action shots** — Add images under `public/images/` and reference them from future gallery or event sections as you grow the site.
+- **`src/config/site.ts`** — Set `contactEmail` and uncomment `socialLinks` with your real Instagram/Facebook URLs.
 
 ```sh
 npm create astro@latest -- --template minimal

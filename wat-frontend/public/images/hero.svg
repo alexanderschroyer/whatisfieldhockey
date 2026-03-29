@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Field hockey on turf</title>
+  <desc id="desc">Stylized green pitch, stick silhouette, ball, and shooting circle.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3d32"/>
+      <stop offset="100%" style="stop-color:#0f1f1a"/>
+    </linearGradient>
+    <linearGradient id="turf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e5c45"/>
+      <stop offset="100%" style="stop-color:#0f2d22"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <rect y="280" width="1200" height="350" fill="url(#turf)"/>
+  <ellipse cx="600" cy="420" rx="380" ry="160" fill="none" stroke="#3dd68c" stroke-width="4" opacity="0.35"/>
+  <path d="M520 200 L540 380 L580 400 L560 220 Z" fill="#2a4a3e" opacity="0.9"/>
+  <circle cx="720" cy="350" r="28" fill="#e8f0ec" opacity="0.85"/>
+  <circle cx="780" cy="320" r="6" fill="#3dd68c"/>
+</svg>

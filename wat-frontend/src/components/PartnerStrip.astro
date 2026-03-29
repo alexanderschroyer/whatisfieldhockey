@@ -1,0 +1,22 @@
+---
+const partners = [
+	'Schools & PE programs',
+	'After-school programs',
+	'Boys & Girls Clubs',
+	'YMCA & rec centers',
+	'Scouts & youth groups',
+];
+---
+
+<section class="partner-strip" aria-labelledby="partner-strip-heading">
+	<h2 id="partner-strip-heading" class="section-heading">Community partners</h2>
+	<p class="partner-strip__lead">
+		We love popping up where families already are. Want a try-it station at your event?
+		<a href="/contact/">Partner with us</a>.
+	</p>
+	<ul class="partner-strip__list">
+		{partners.map((name) => (
+			<li>{name}</li>
+		))}
+	</ul>
+</section>

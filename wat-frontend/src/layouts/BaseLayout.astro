@@ -8,9 +8,11 @@ interface Props {
 	description?: string;
 }
 
-const { title, description = 'Growing field hockey in Alabama — rules, history, pathways, and scholarships.' } =
-	Astro.props;
-const pageTitle = title === 'Home' ? 'Field Hockey' : `${title} · Field Hockey`;
+const {
+	title,
+	description = 'Youth field hockey in Alabama — try-it clinics, programs, schedules, and how to get involved. Plus rules, history, and pathways.',
+} = Astro.props;
+const pageTitle = title === 'Home' ? 'Alabama youth field hockey' : `${title} · Field Hockey`;
 ---
 
 <!doctype html>
@@ -26,13 +28,14 @@ const pageTitle = title === 'Home' ? 'Field Hockey' : `${title} · Field Hockey`
 	</head>
 	<body>
 		<div class="site-wrap">
+			<a class="skip-link" href="#main-content">Skip to main content</a>
 			<header class="site-header">
 				<div class="site-header__inner">
-					<p class="brand"><a href="/">Field Hockey</a></p>
+					<p class="brand"><a href="/">Alabama field hockey</a></p>
 					<SiteNav />
 				</div>
 			</header>
-			<main>
+			<main id="main-content">
 				<slot />
 			</main>
 			<SiteFooter />

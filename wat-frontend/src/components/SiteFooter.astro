@@ -1,9 +1,43 @@
 ---
+import {
+	contactEmail,
+	contactPhoneDisplay,
+	contactPhoneTel,
+	socialLinks,
+} from '../config/site';
+
+const mailto = `mailto:${contactEmail}`;
 ---
 
 <footer class="site-footer">
 	<div class="site-footer__inner">
-		<p>
+		<div class="site-footer__row">
+			<nav class="site-footer__nav" aria-label="Footer">
+				<a href="/programs/">Programs</a>
+				<a href="/events/">Events</a>
+				<a href="/about/">About</a>
+				<a href="/contact/">Contact</a>
+			</nav>
+			<p class="site-footer__contact">
+				<a href={mailto}>{contactEmail}</a>
+				<span class="site-footer__contact-sep" aria-hidden="true"> · </span>
+				<a href={contactPhoneTel}>{contactPhoneDisplay}</a>
+			</p>
+			{
+				socialLinks.length > 0 && (
+					<ul class="site-footer__social">
+						{socialLinks.map(({ label, href }) => (
+							<li>
+								<a href={href} rel="noopener noreferrer">
+									{label}
+								</a>
+							</li>
+						))}
+					</ul>
+				)
+			}
+		</div>
+		<p class="site-footer__disclaimer">
 			This site is an independent community resource. Rules and eligibility change; always confirm with official
 			bodies (FIH, NCAA, USA Field Hockey, schools). Not affiliated with the Olympics, NCAA, or any governing body
 			unless stated.

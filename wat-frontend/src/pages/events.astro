@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { contactEmail } from '../config/site';
+
+const mailto = `mailto:${contactEmail}`;
+const title = 'Events';
+const description = 'Free try-it sessions, open houses, and pop-ups at schools and community partners.';
+---
+
+<BaseLayout {title} {description}>
+	<PageHeader {title} {description} />
+	<div class="prose">
+		<p>
+			Nothing lowers the barrier like <strong>seeing, trying, and laughing through</strong> a first session. We run
+			and co-host pop-ups so kids can pick up a stick next to friends from school, Scouts, or the Y.
+		</p>
+
+		<h2>Upcoming dates</h2>
+		<p>
+			Calendar entries will be posted here (date, time, place, age focus). When we publish specific try-it sessions,
+			a few highlights also appear on the <a href="/">home page</a> so families see them at a glance.
+		</p>
+		<p>
+			If you have a training weekend or tournament on the horizon, check back after the team updates this page — or
+			email <a href={mailto}>{contactEmail}</a> to get notified.
+		</p>
+
+		<h2>Try-it &amp; open house format</h2>
+		<ul>
+			<li>Short welcome and safety chat.</li>
+			<li>Stick skills in small groups — push, pass, mini-goals.</li>
+			<li>Scrimmage or relay to end on a high note.</li>
+			<li>Flyers or QR codes for <a href="/programs/">programs</a> and <a href="/contact/">contact</a>.</li>
+		</ul>
+
+		<h2>Host us</h2>
+		<p>
+			Schools, after-school providers, Boys &amp; Girls Clubs, YMCAs, Scouts, and other youth organizations: we can
+			bring a compact station to your family night or field day. <a href="/contact/">Email to coordinate</a> — tell us
+			the expected ages, space (grass or gym), and time block.
+		</p>
+	</div>
+</BaseLayout>

@@ -12,7 +12,7 @@ On the field, **college** games follow **NCAA rule modifications** on top of the
 
 ## NAIA and other routes
 
-Some **NAIA** institutions sponsor field hockey; aid rules differ from the NCAA. Junior college pathways exist in places but are less central than in some other sports — check current catalogs.
+A **small number of NAIA** institutions sponsor field hockey; aid rules differ from the NCAA. Junior college pathways exist in places but are less central than in some other sports — check current catalogs.
 
 ## Recruiting reality
 

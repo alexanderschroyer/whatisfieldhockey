@@ -17,14 +17,14 @@ export const historyEvents: TimelineItem[] = [
 		body: 'The International Hockey Federation (FIH) was established to govern the global game and major competitions.',
 	},
 	{
-		year: '1975',
-		title: 'Men’s World Cup',
-		body: 'The first men’s FIH Hockey World Cup helped cement international calendars beyond the Olympics.',
+		year: '1971',
+		title: 'Men’s World Cup begins',
+		body: 'The inaugural men’s FIH Hockey World Cup (Spain) anchored a major tournament rhythm beyond the Olympics; later editions deepened international calendars.',
 	},
 	{
 		year: '1980s–today',
-		title: 'Rule modernisation',
-		body: 'Artificial turf, rolling substitutions, quarter play, and video umpiring reshaped speed and TV presentation — always check the current FIH rulebook.',
+		title: 'Rule modernization',
+		body: 'Artificial turf, rolling substitutions, quarter play, and video referral reshaped speed and TV presentation — always check the current FIH rulebook.',
 	},
 	{
 		year: 'US context',

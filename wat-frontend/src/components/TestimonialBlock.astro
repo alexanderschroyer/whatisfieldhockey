@@ -1,0 +1,31 @@
+---
+import { testimonials } from '../data/testimonials';
+
+const hasQuotes = testimonials.length > 0;
+---
+
+<section class="testimonial-block" aria-labelledby="testimonial-heading">
+	<h2 id="testimonial-heading" class="section-heading">What families say</h2>
+	{
+		hasQuotes ? (
+			<>
+				<p class="testimonial-block__intro">
+					Word of mouth matters. Share your story and we may feature it here — <a href="/contact/">contact us</a>.
+				</p>
+				<div class="testimonial-block__grid">
+					{testimonials.map(({ text, attribution }) => (
+						<blockquote class="testimonial-block__quote">
+							<p>“{text}”</p>
+							<footer>— {attribution}</footer>
+						</blockquote>
+					))}
+				</div>
+			</>
+		) : (
+			<p class="testimonial-block__invite">
+				We’re still collecting voices from the pitch. When your family has a story to tell — first goal, new friends,
+				or a great clinic day — <a href="/contact/">send it our way</a> and we may feature it here.
+			</p>
+		)
+	}
+</section>

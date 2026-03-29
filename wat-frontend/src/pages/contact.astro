@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import {
+	contactEmail,
+	contactPhoneDisplay,
+	contactPhoneTel,
+	socialLinks,
+} from '../config/site';
+
+const mailto = `mailto:${contactEmail}`;
+const title = 'Contact';
+const description =
+	'Get in touch about programs, try-it clinics, volunteering, or partnering with schools and youth organizations.';
+---
+
+<BaseLayout {title} {description}>
+	<PageHeader {title} {description} />
+	<div class="prose">
+		<p>
+			Questions about <strong>registration</strong>, <strong>schedules</strong>, <strong>fees</strong>, or bringing field
+			hockey to your school or club? We’d love to hear from you.
+		</p>
+		<p class="contact-channel-list">
+			<a class="contact-email-link" href={mailto}>{contactEmail}</a>
+			<span class="contact-channel-sep" aria-hidden="true"> · </span>
+			<a class="contact-phone-link" href={contactPhoneTel}>{contactPhoneDisplay}</a>
+		</p>
+		{
+			socialLinks.length > 0 && (
+				<>
+					<h2>Social</h2>
+					<ul>
+						{socialLinks.map(({ label, href }) => (
+							<li>
+								<a href={href} rel="noopener noreferrer">
+									{label}
+								</a>
+							</li>
+						))}
+					</ul>
+				</>
+			)
+		}
+		{
+			socialLinks.length === 0 && (
+				<p class="contact-note">Social links will show here when the club adds them.</p>
+			)
+		}
+		<h2>Partners</h2>
+		<p>
+			Schools, YMCAs, Boys &amp; Girls Clubs, Scouts, and other youth-serving groups: email us to host a pop-up or
+			try-it at your event.
+		</p>
+	</div>
+</BaseLayout>
