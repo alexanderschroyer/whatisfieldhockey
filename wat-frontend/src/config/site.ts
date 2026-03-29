@@ -1,7 +1,7 @@
 /**
  * Club contact and social URLs. Update socialLinks when you have public profiles.
  */
-export const contactEmail = 'westal.fieldhockey@gmail.com';
+export const contactEmail = 'westal.fieldhockey@protonmail.com';
 
 /** Human-readable phone for display */
 export const contactPhoneDisplay = '205-561-7049';
